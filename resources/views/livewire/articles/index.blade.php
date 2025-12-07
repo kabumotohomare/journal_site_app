@@ -9,13 +9,9 @@ state(['articles' => fn() => Article::all()]);
 
 <div>
     <h1>論文一覧</h1>
-    <ul>
-        @foreach ($articles as $article)
-            <li>
-                <a href="{{ route('articles/show', $article) }}">
-                    {{ $article->title }}
-                </a>
-            </li>
-        @endforeach
-    </ul>
+    @foreach ($articles as $article)
+        <a href="{{ route('articles/show', $article) }}">
+            <p>{!! nl2br(e($article->title)) !!}</p>
+        </a>
+    @endforeach
 </div>
