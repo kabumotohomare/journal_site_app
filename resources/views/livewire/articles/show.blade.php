@@ -6,7 +6,7 @@ use App\Models\Article;
 state(['article' => fn(Article $article) => $article]);
 
 //削除のロジック
-$destroy = function(){
+$destroy = function () {
     $this->article->delete();
     return redirect()->route('articles/index');
 };
@@ -16,5 +16,7 @@ $destroy = function(){
     <h1>論文詳細</h1>
     <h2>{!! nl2br(e($article->title)) !!}</h2>
     <p>{!! nl2br(e($article->body)) !!}</p>
-    <button wire:click="destroy" wire:confirm="削除しますか？">削除する</button>  
+    <button onclick=location.href='/articles'>一覧に戻る</button>
+    <button onclick=location.href='/articles/edit'>編集する</button>
+    <button wire:click="destroy" wire:confirm="削除しますか？">削除する</button>
 </div>
