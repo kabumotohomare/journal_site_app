@@ -7,13 +7,13 @@ state(['title', 'body']);
 
 // 論文を保存する関数
 $store = function () {
-// フォームからの入力値をデータベースへ保存
-Article::create([
-'title' => $this->title,
-'body' => $this->body,
-]);
-// 一覧ページにリダイレクト
-return redirect()->route('articles/index');
+    // フォームからの入力値をデータベースへ保存
+    Article::create([
+        'title' => $this->title,
+        'body' => $this->body,
+    ]);
+    // 一覧ページにリダイレクト
+    return redirect()->route('articles/index');
 };
 
 ?>

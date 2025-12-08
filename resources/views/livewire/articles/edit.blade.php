@@ -7,16 +7,16 @@ use App\Models\Article;
 state(['article', 'title', 'body']);
 
 //ルートディバイディング
-mount(function(Article $article){
+mount(function (Article $article) {
     $this->article = $article;
     $this->title = $article->title;
     $this->body = $article->body;
 });
 
-$update = function(){
+$update = function () {
     $this->article->update([
         'title' => $this->title,
-        'body' => $this->body
+        'body' => $this->body,
     ]);
     return redirect()->route('articles/index');
 };
