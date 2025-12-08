@@ -18,7 +18,7 @@ $update = function(){
         'title' => $this->title,
         'body' => $this->body
     ]);
-    return redirect()->route('articles.show', $this->article);
+    return redirect()->route('articles/index');
 };
 ?>
 
