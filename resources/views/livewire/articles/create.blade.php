@@ -3,7 +3,7 @@
 use function Livewire\Volt\{state};
 use App\Models\Article;
 
-state(['article', 'title', 'body']);
+state(['title', 'body']);
 
 // 論文を保存する関数
 $store = function () {
