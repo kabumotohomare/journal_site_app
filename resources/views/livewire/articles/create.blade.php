@@ -3,15 +3,17 @@
 use function Livewire\Volt\{state};
 use App\Models\Article;
 
-state(['title', 'body']);
+state(['article', 'title', 'body']);
 
 // 論文を保存する関数
 $store = function () {
     // フォームからの入力値をデータベースへ保存
-    Article::create([
-        'title' => $this->title,
-        'body' => $this->body,
-    ]);
+    // Article::create([
+    //     'title' => $this->title,
+    //     'body' => $this->body,
+    // ]);
+    //fillableを踏まえて修正
+    $this->article->create($this->all());
     // 一覧ページにリダイレクト
     return redirect()->route('articles/index');
 };

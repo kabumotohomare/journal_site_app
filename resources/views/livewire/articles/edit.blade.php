@@ -14,10 +14,7 @@ mount(function (Article $article) {
 });
 
 $update = function () {
-    $this->article->update([
-        'title' => $this->title,
-        'body' => $this->body,
-    ]);
+    $this->article->update($this->all());
     return redirect()->route('articles/index');
 };
 ?>
